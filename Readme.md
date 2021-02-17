@@ -20,11 +20,15 @@ devDependencias - npm install nodemon --save-dev
 ## .ENV 📦
 Crear fichero de variables de entorno
 MONGODB_CNN es la conexion de mongo
-SECRETORPRIVATEKEY es la llave de JWT 
+SECRETORPRIVATEKEY, es la llave de JWT
+GOOGLE_CLIENT_ID : [Google 02Auth SignIn ](https://developers.google.com/identity/sign-in/web/sign-in)
+GOOGLE_SECRET_ID : [Google 02Auth Backend](https://developers.google.com/identity/sign-in/web/backend-auth)
 ```
 PORT=8080
 MONGODB_CNN =mongodb+srv://<user>:<password>@<url>/<dbname>
 SECRETORPRIVATEKEY = <tuclave>
+GOOGLE_CLIENT_ID= <user_id_google>
+GOOGLE_SECRET_ID= <secret_pass_id>
 ```
 ### Instalación de dependencias 🔧 
 
@@ -38,6 +42,7 @@ SECRETORPRIVATEKEY = <tuclave>
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-validator": "^6.9.2",
+    "google-auth-library": "^7.0.2",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.11.15"
   }
@@ -82,7 +87,7 @@ Las librerias utilizadas son las nombradas en la siguiente lista:
 * [Express-validator](https://www.npmjs.com/package/express-validator) - middleware de express envuelto con validator.js
 * [Mongoose](https://www.npmjs.com/package/mongoose) - Mangosta es un Object Document Mapper (ODM) permite trabajar con esquemas con base de datos nosql mongo.
 * [Jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken) - Tokens de seguridad para securizar el api rest
-
+* [google-auth-library](https://www.npmjs.com/package/google-auth-library) - Libreria Google para utilizar sus servicios con nodejs
 
 
 ## Validaciones  🔎
@@ -194,7 +199,6 @@ const validarJWT = async ( req = request , res= response , next ) => {
 
     }
 ```
-
 
 ## Readme 🖇
 
