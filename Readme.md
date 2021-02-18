@@ -23,7 +23,7 @@ MONGODB_CNN es la conexion de mongo
 SECRETORPRIVATEKEY, es la llave de JWT
 GOOGLE_CLIENT_ID : [Google 02Auth SignIn ](https://developers.google.com/identity/sign-in/web/sign-in)
 GOOGLE_SECRET_ID : [Google 02Auth Backend](https://developers.google.com/identity/sign-in/web/backend-auth)
-```
+```dotenv
 PORT=8080
 MONGODB_CNN =mongodb+srv://<user>:<password>@<url>/<dbname>
 SECRETORPRIVATEKEY = <tuclave>
@@ -92,7 +92,7 @@ Las librerias utilizadas son las nombradas en la siguiente lista:
 
 ## Validaciones  🔎
 Validaciones de Usuario
-```
+```JavaScript
 const rolValido =  async ( rol = '' ) => {
     const existeRol = await Role.findOne({rol})
     if(!existeRol){
@@ -118,7 +118,7 @@ const existeUserId = async (id) => {
 ```
 
 Validaciones de Roles de Usuarios (Middleware)
-```
+```JavaScript
 const esAdminRol = (req ,res=response , next) => {
 
     if(!req.usuario){
@@ -159,7 +159,7 @@ const tieneRole = ( ...roles ) => {
 ```
 
 Validaciones de JWT (Middleware)
-```
+```JavaScript
 const validarJWT = async ( req = request , res= response , next ) => {
 
     const token = req.header('x-token')
